@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JSON Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+            text-decoration: underline;
+        }
+        h2 {
+            color: #555;
+        }
+        p {
+            color: #777;
+            line-height: 1.6;
+            text-align: left;
+        }
+        em {
+            font-style: italic;
+        }
+        h3 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+        h4 {
+            color: #ff6347;
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        b {
+            font-weight: bold;
+        }
+        li{
+            text-align: left;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF to JSON Converter</h1>
+        <h2>Instructions:</h2>
+        <p> 
+            <ol > 
+                <li>Please select a research article PDF file from your computer or input PDF URL link. <br> </li>
+                <li> Upload the PDF file or URL. <br> </li>
+                <li>Once successfully uploaded, please click <em>Preview</em> and/or <em>Download</em>. <br> </li>
+                <li>When <em>Preview</em> is clicked, the extracted text will be displayed neatly with section titles and line breaks. <br> </li>
+                <li>When <em>Download</em> is clicked, the newly converted JSON file with sections will automatically download. </li>
+            </ol>
+        </p>
+        <h4>Error: File or URL must be a PDF!</h4>
+        <h3>➞ Computer Upload</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+        <h3>➞ URL Upload</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label>
+                <input type="text" name="url" placeholder="Enter PDF URL"  required>
+            </label>
+            <input type="submit" value="Upload">
+        </form>
+        <p class="disclaimer">
+            <b>*Disclaimer: This application may not work as intended for some PDFs due to varying format patterns.</b>
+        </p>
+    </div>
+</body>
+</html>
